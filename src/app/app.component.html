@@ -1,0 +1,46 @@
+
+
+<div class="container">
+  <h2>Products</h2>
+
+
+
+  <table class="table table-striped">
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Img</th>
+      <th>    </th>
+    </tr>
+    <tr>
+      <td><input [(ngModel)]="product.id"></td>
+      <td><input [(ngModel)]="product.name"></td>
+      <td><input [(ngModel)]="product.image"></td>
+      <button class="btn btn-danger" (click)="create()">Create</button>
+    </tr>
+  </table>
+
+
+  <table class="table table-striped">
+    <thead>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Img</th>
+      <th colspan="2">Action</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let p of list">
+      <td>{{p.id}}</td>
+      <td>{{p.name}}</td>
+      <td><img src="{{p.image}}" width="300" height="250"/></td>
+      <td><button type="button" (click)="showEdit(p)" class="btn btn-primary" data-toggle="modal" data-target="#edit">Edit</button></td>
+      <td><button type="button" (click)="delete(p.id)" class="btn btn-danger">Delete</button></td>
+
+    </tr>
+
+    </tbody>
+  </table>
+</div>
+
